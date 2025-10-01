@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const helloRoute = require('./routes/hello');
 const mongoose = require('mongoose');
+const authRouter = require('./routes/auth');
 
 //define the port number the server will listen on
 const PORT = process.env.PORT;
@@ -10,9 +10,8 @@ const PORT = process.env.PORT;
 const app = express();
 const DB = process.env.MONGO_URI;
 //middleware to register routes or to mount routes
-
-app.use(helloRoute);
-
+app.use(express.json());
+app.use(authRouter);
 
 mongoose.connect(DB).then(()=>{
     console.log('MongoDB Connected');
