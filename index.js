@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRouter = require('./routes/auth');
 const bannerRouter = require('./routes/banner');
+const categoryRouter = require('./routes/category');
 
 //define the port number the server will listen on
 const PORT = process.env.PORT;
@@ -14,6 +15,7 @@ const DB = process.env.MONGO_URI;
 app.use(express.json());
 app.use(authRouter);
 app.use(bannerRouter);
+app.use(categoryRouter);
 
 mongoose.connect(DB).then(()=>{
     console.log('MongoDB Connected');
