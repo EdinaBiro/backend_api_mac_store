@@ -11,11 +11,11 @@ const subCategorySchema = mongoose.Schema({
     },
     image:{
         type: String,
-        reqired: true,
+        reqiured: true,
     },
     subCategoryName:{
         type: String,
-        reqired: true,
+        required: true,
     },
 });
 

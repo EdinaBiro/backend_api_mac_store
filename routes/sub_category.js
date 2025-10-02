@@ -6,11 +6,11 @@ subCategoryRouter.post('/api/subcategories', async(req,res)=>{
     try{
         const {categoryId, categoryName, image, subCategoryName} = req.body;
         const subcategory = new subCategory({categoryId, categoryName, image, subCategoryName});
-        await subCategory.save();
+        await subcategory.save();
         res.status(201).send(subcategory);
     }catch(e){
         res.status(500).json({error: e.message});
     }
 });
 
-module.export = subCategoryRouter;
+module.exports = subCategoryRouter;
