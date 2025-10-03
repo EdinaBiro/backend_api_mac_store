@@ -14,4 +14,13 @@ ProductReviewRouter.post('/api/product-review', async(req,res)=>{
     }
 });
 
+ProductReviewRouter.get('/api/reviews', async(req,res)=>{
+    try{
+        const reviews = await ProductReview.find();
+        return res.status(200).json(reviews);
+    }catch(e){
+         res.status(500).json({error: e.message});
+    }
+});
+
 module.exports = ProductReviewRouter;
