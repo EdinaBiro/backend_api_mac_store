@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const subCategory = require('./sub_categories');
 
 const productSchema = mongoose.Schema({
     productName:{
