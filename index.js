@@ -6,6 +6,7 @@ const bannerRouter = require('./routes/banner');
 const categoryRouter = require('./routes/category');
 const subCategoryRouter = require('./routes/sub_category');
 const productRouter = require('./routes/products');
+const productReviewRouter = require('./routes/product_review');
 
 //define the port number the server will listen on
 const PORT = process.env.PORT;
@@ -20,6 +21,7 @@ app.use(bannerRouter);
 app.use(categoryRouter);
 app.use(subCategoryRouter);
 app.use(productRouter);
+app.use(productReviewRouter);
 
 mongoose.connect(DB).then(()=>{
     console.log('MongoDB Connected');
