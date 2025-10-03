@@ -1,5 +1,5 @@
 const express = require('express');
-const Product = require('../models/product');
+const Product = require('../models/products');
 const productRouter = express.Router();
 
 productRouter.post('/api/add-product', async(req,res)=>{
@@ -13,4 +13,4 @@ productRouter.post('/api/add-product', async(req,res)=>{
     }
 });
 
-module.export = productRouter;
+module.exports = productRouter;
