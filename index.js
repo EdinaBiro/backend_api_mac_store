@@ -7,6 +7,7 @@ const categoryRouter = require('./routes/category');
 const subCategoryRouter = require('./routes/sub_category');
 const productRouter = require('./routes/products');
 const productReviewRouter = require('./routes/product_review');
+const cors = require('cors');
 
 //define the port number the server will listen on
 const PORT = process.env.PORT;
@@ -16,6 +17,7 @@ const app = express();
 const DB = process.env.MONGO_URI;
 //middleware to register routes or to mount routes
 app.use(express.json());
+app.use(cors());
 app.use(authRouter);
 app.use(bannerRouter);
 app.use(categoryRouter);
